@@ -25,6 +25,10 @@ router.get('/amamzon-form.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/amamzon-form.html'));
 });
 
+router.get('/btc-payment.pdf', function (req, res) {
+    res.sendFile(path.join(__dirname + '/file/btc-payment.pdf'));
+});
+
 //add the router
 app.use('/', router);
 app.use("/assets", express.static(__dirname + '/assets'));

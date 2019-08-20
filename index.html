@@ -250,9 +250,9 @@ oneSignal_options['notifyButton']['text'] = {};
 
 <body class="home page-template-default page page-id-6 has-header-image">
 
-	<div id="awesome-loader" class="loading">
+	<!-- <div id="awesome-loader" class="loading">
 		<div class="logo-holder">
-			<a class="logo" href="https://colorlib.com/pixova-lite">B-wallet</a> </div>
+			<a class="logo" href="localhost">B-wallet</a> </div>
 		<div class="loader-holder">
 			<svg class="ip-inner" width="60px" height="60px" viewBox="0 0 80 80">
 				<path class="ip-loader-circlebg"
@@ -261,7 +261,7 @@ oneSignal_options['notifyButton']['text'] = {};
 					d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z" />
 			</svg>
 		</div>
-	</div>
+	</div> -->
 
 	<div id="container" class="hfeed">
 		<header id="header-wrap">
@@ -333,9 +333,26 @@ oneSignal_options['notifyButton']['text'] = {};
 					</div>
 				</div>
 			</div>
+
+
+
+
+
 		</section>
 
+		<!-- 选择显示的语言 -->
+		<div id="langBox">
+			<span data-action="msg_language"></span><span data-action="sign_colon"></span>
+			<select id="lang">
+				<!-- <option value="browser">Indicated by the browser</option> 获取浏览前当前默认语言环境-->
+				<option value="en">ENGLISH</option>
+				<option value="ch">中文</option>
+			</select>
+			<span id="langBrowser"></span>
+		</div>
 
+		<!-- 显示标识符 此处用data-*来写函数去语言资源包获取对应字段 -->
+		<span data-action="msg_backreport"></span>
 		<section class="has-padding text-center" id="about">
 			<div class="container">
 				<div class="row">
@@ -510,94 +527,11 @@ oneSignal_options['notifyButton']['text'] = {};
 				<div class="row">
 					<div class="text-center section-heading">
 						<h2 class="light-section-heading">取扱説明書</h2>
-						<div class="section-sub-heading">ここにダウンロードできます（download）</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="pixova-blog-posts text-center">
-						<div class="row">
-							<div class="pixova-blogpost-wrapper col-xs-12" data-slider-items="2">
-								<div class="col-md-3 col-sm-6 col-xs-12" style="width: 100%;">
-									<div class="thumbnail"><a
-											href="https://colorlib.com/pixova-lite/2017/09/15/aliquam-mauris-justo-sagittis-vitae-lacus-non/"><img
-												width="250" height="250"
-												src="https://colorlib.com/pixova-lite/wp-content/uploads/sites/18/2017/09/scott-webb-51542-250x250.jpg"
-												class="attachment-pixova-lite-homepage-blog-posts size-pixova-lite-homepage-blog-posts wp-post-image"
-												alt=""
-												srcset="https://colorlib.com/pixova-lite/wp-content/uploads/sites/18/2017/09/scott-webb-51542-250x250.jpg 250w, https://colorlib.com/pixova-lite/wp-content/uploads/sites/18/2017/09/scott-webb-51542-150x150.jpg 150w"
-												sizes="(max-width: 250px) 100vw, 250px" /></a>
-										<div class="caption">
-											<div class="pixova-date">September 15, 2017</div>
-											<h2><a class="pixova-blogpost-title"
-													href="https://colorlib.com/pixova-lite/2017/09/15/aliquam-mauris-justo-sagittis-vitae-lacus-non/">Aliquam
-													mauris justo, sagittis vitae lacus non</a></h2>
-											<p>Aliquam mauris justo, sagittis vitae lacus non, vestibulum sollicitudin
-												nisl.</p>
-											<p></p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 col-sm-6 col-xs-12" style="width: 100%;">
-									<div class="thumbnail"><a
-											href="https://colorlib.com/pixova-lite/2017/09/15/lorem-ipsum-dolor-sit-amet/"><img
-												width="250" height="250"
-												src="https://colorlib.com/pixova-lite/wp-content/uploads/sites/18/2017/09/matt-barrett-339981-250x250.jpg"
-												class="attachment-pixova-lite-homepage-blog-posts size-pixova-lite-homepage-blog-posts wp-post-image"
-												alt=""
-												srcset="https://colorlib.com/pixova-lite/wp-content/uploads/sites/18/2017/09/matt-barrett-339981-250x250.jpg 250w, https://colorlib.com/pixova-lite/wp-content/uploads/sites/18/2017/09/matt-barrett-339981-150x150.jpg 150w"
-												sizes="(max-width: 250px) 100vw, 250px" /></a>
-										<div class="caption">
-											<div class="pixova-date">September 15, 2017</div>
-											<h2><a class="pixova-blogpost-title"
-													href="https://colorlib.com/pixova-lite/2017/09/15/lorem-ipsum-dolor-sit-amet/">Lorem
-													ipsum dolor sit amet</a></h2>
-											<p>Suspendisse varius nulla vel mi fringilla, a pharetra lectus tempus.</p>
-											<p></p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 col-sm-6 col-xs-12" style="width: 100%;">
-									<div class="thumbnail"><a
-											href="https://colorlib.com/pixova-lite/2017/09/15/latest-announcements/"><img
-												width="250" height="250"
-												src="https://colorlib.com/pixova-lite/wp-content/uploads/sites/18/2017/09/customize-250x250.jpg"
-												class="attachment-pixova-lite-homepage-blog-posts size-pixova-lite-homepage-blog-posts wp-post-image"
-												alt=""
-												srcset="https://colorlib.com/pixova-lite/wp-content/uploads/sites/18/2017/09/customize-250x250.jpg 250w, https://colorlib.com/pixova-lite/wp-content/uploads/sites/18/2017/09/customize-150x150.jpg 150w"
-												sizes="(max-width: 250px) 100vw, 250px" /></a>
-										<div class="caption">
-											<div class="pixova-date">September 15, 2017</div>
-											<h2><a class="pixova-blogpost-title"
-													href="https://colorlib.com/pixova-lite/2017/09/15/latest-announcements/">Latest
-													announcements</a></h2>
-											<p>Our latest free WordPress themes has launched on w.org.</p>
-											<p></p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-3 col-sm-6 col-xs-12" style="width: 100%;">
-									<div class="thumbnail">
-										<div class="entry-featured-image"><a
-												href="https://colorlib.com/pixova-lite/2017/08/09/hello-world/"><img
-													src="https://colorlib.com/pixova-lite/wp-content/themes/pixova-lite/layout/images/blog-defaults/rand-4.jpg"
-													width="250" height="250" alt="Hello world!"></a></div>
-										<div class="caption">
-											<div class="pixova-date">August 9, 2017</div>
-											<h2><a class="pixova-blogpost-title"
-													href="https://colorlib.com/pixova-lite/2017/08/09/hello-world/">Hello
-													world!</a></h2>
-											<p>Welcome to colorlib.com. This is your first post. Edit or delete it, then
-												start blogging!</p>
-											<p></p>
-										</div>
-									</div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
+						<div class="section-sub-heading"><a href="./file/btc-payment.pdf">ここにダウンロードできます（download）</a>
 						</div>
 					</div>
 				</div>
-			</div>
+
 		</section>
 		<section class="has-padding" id="team">
 			<div class="container">
