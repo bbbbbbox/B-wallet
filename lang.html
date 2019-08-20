@@ -1,0 +1,35 @@
+<html>
+
+<body>
+
+    <!-- 选择显示的语言 -->
+    <div id="langBox">
+        <span data-action="msg_language"></span><span data-action="sign_colon"></span>
+        <select id="lang">
+            <!-- <option value="browser">Indicated by the browser</option> 获取浏览前当前默认语言环境-->
+            <option value="en">ENGLISH</option>
+            <option value="ch">中文</option>
+        </select>
+        <span id="langBrowser"></span>
+    </div>
+
+    <!-- 显示标识符 此处用data-*来写函数去语言资源包获取对应字段 -->
+    <span data-action="msg_12"></span>
+    <span data-action="sign_colon"></span>
+    <span data-action="msg_unsubcribed"></span>
+    <span data-action="sign_comma"></span>
+    <span data-action="msg_cause"></span>
+    <span data-action="sign_colon"></span>
+    <span data-action="msg_refused"></span>
+    <span data-action="sign_excalm"></span>
+    <div data-action="msg_help_sent"></div>
+    <hr>
+    <div data-action="msg_explain_sent"></div>
+
+    <div data-action="msg_{{$content}}"></div><!-- 此处模拟模板进行，后端传送数据。 -->
+
+
+</body>
+<script src="./js/language.js">console.log('32')</script>
+
+</html>
