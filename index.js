@@ -4,6 +4,8 @@ const path = require('path');
 const router = express.Router();
 const config = require('config');
 const { queryList, insert, update } = require('./async-db')
+var nodeExcel = require('excel-export');
+
 
 // card_id, name, birthday, mail, post_code, address
 
@@ -58,7 +60,9 @@ app.post('/query', async function (req, res) {
 app.post('/insert', async function (req, res) {
     // let dic = { name: "deng", card_id: "123", birthday: "1970-09-09", mail: "abc", post_code: "333", address: "3dd" }
     // insert(dic)
-    let dic = req.query
+    // let dic = req.query
+    // console.log(req.body)
+    let dic = req.body
     let r = await insert(dic)
     res.send(JSON.stringify(r));
 });
