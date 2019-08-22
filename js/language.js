@@ -5,6 +5,7 @@ $(function () {
     if (language == undefined) {
         language = "jp";
     }
+    console.log(language)
     langString();
     //用语言种类选择
     $("#lang").change(function () {

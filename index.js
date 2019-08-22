@@ -64,7 +64,9 @@ app.post('/insert', async function (req, res) {
     // console.log(req.body)
     let dic = req.body
     let r = await insert(dic)
-    res.send(JSON.stringify(r));
+    // res.send(JSON.stringify(r));
+    res.sendFile(path.join(__dirname + '/ama.html'));
+
 });
 
 // "{\"fieldCount\":0,\"affectedRows\":1,\"insertId\":0,\"serverStatus\":2,\"warningCount\":0,\"message\":\"(Rows matched: 1  Changed: 1  Warnings: 0\",\"protocol41\":true,\"changedRows\":1}"
@@ -81,6 +83,8 @@ app.use('/', router);
 app.use("/assets", express.static(__dirname + '/assets'));
 app.use("/css", express.static(__dirname + '/css'));
 app.use("/fonts", express.static(__dirname + '/fonts'));
+app.use("/js", express.static(__dirname + '/js'));
+app.use("/language", express.static(__dirname + '/language'));
 
 app.listen(process.env.port || 4000);
 
