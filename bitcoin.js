@@ -47,7 +47,7 @@ const transfer1 = () => {
     console.log(txb.build().toHex());
     let tx = txb.build().toHex()
 
-    // 在一个测试链的节点把交易广布出去
+    // 在一个测试链的节点把交易广播出去
     // const result = await fetch('https://api.blockcypher.com/v1/btc/test3/txs/push', {
     //     method: 'post',
     //     headers: { 'Content-Type': 'application/json' },
@@ -60,6 +60,7 @@ const transfer1 = () => {
     }).then(function (response) {
         return response.json();
     }).then(function (myJson) {
+        console.log("++++++++++++++");
         console.log(JSON.stringify(myJson));
     });
 
@@ -145,45 +146,56 @@ transfer1();
 Deprecation Warning: TransactionBuilder will be removed in the future. (v6.x.x or later) Please use the Psbt class instead. Examples of usage are available in the transactions-psbt.js integration test file on our Github. A high level explanation is available in the psbt.ts and psbt.js files as well.
 DEPRECATED: TransactionBuilder sign method arguments will change in v6, please use the TxbSignArg interface
 0200000001330a267eab80eb788ab125c1afecdbead0a1fc337f19004f8bb6b8a4967ceff4000000006a4730440220272cdcdfa211a995fe56ed7cef1d47259724811fe8d367c15db8edfa7681b0f6022045cb3fd20dd96061ecf8b2028e7b026beac21d79122c0f0ebab6113b66f143f4012102c08aefd6f13d9a9d209d0cfce0be2b780c269ae3afeaa8ed2b02358df742ae72ffffffff0140420f00000000001976a91400a14e6aa9fb5177c776209d105a0587a31fb11288ac00000000
-{
-	"tx": {
-		"block_height": -1,
-		"block_index": -1,
-		"hash": "0fa41611407b2b60bb82236a70d435c73e48e057b39297c45c6ca369c23617f0",
-		"addresses": ["moy1ssWvjhA9j6qJ4Bu7nvV3zVxZevrvY9", "mfaHXp87jU5M66mzZCJNd9hRezPMQGyU6q"],
-		"total": 1000000,
-		"fees": 0,
-		"size": 191,
-		"preference": "low",
-		"relayed_by": "124.87.166.38",
-		"received": "2019-08-29T02:27:21.324214118Z",
-		"ver": 2,
-		"double_spend": false,
-		"vin_sz": 1,
-		"vout_sz": 1,
-		"confirmations": 0,
-		"inputs": [{
-			"prev_hash": "f4ef7c96a4b8b68b4f00197f33fca1d0eadbecafc125b18a78eb80ab7e260a33",
-			"output_index": 0,
-			"script": "4730440220272cdcdfa211a995fe56ed7cef1d47259724811fe8d367c15db8edfa7681b0f6022045cb3fd20dd96061ecf8b2028e7b026beac21d79122c0f0ebab6113b66f143f4012102c08aefd6f13d9a9d209d0cfce0be2b780c269ae3afeaa8ed2b02358df742ae72",
-			"output_value": 1000000,
-			"sequence": 4294967295,
-			"addresses": ["moy1ssWvjhA9j6qJ4Bu7nvV3zVxZevrvY9"],
-			"script_type": "pay-to-pubkey-hash",
-			"age": 1575411
-		}],
-		"outputs": [{
-			"value": 1000000,
-			"script": "76a91400a14e6aa9fb5177c776209d105a0587a31fb11288ac",
-			"addresses": ["mfaHXp87jU5M66mzZCJNd9hRezPMQGyU6q"],
-			"script_type": "pay-to-pubkey-hash"
-		}]
-	}
-}
+{"tx":{"block_height":-1,"block_index":-1,"hash":"0fa41611407b2b60bb82236a70d435c73e48e057b39297c45c6ca369c23617f0","addresses":["moy1ssWvjhA9j6qJ4Bu7nvV3zVxZevrvY9","mfaHXp87jU5M66mzZCJNd9hRezPMQGyU6q"],"total":1000000,"fees":0,"size":191,"preference":"low","relayed_by":"124.87.166.38","received":"2019-08-30T02:30:49.938228137Z","ver":2,"double_spend":false,"vin_sz":1,"vout_sz":1,"confirmations":0,"inputs":[{"prev_hash":"f4ef7c96a4b8b68b4f00197f33fca1d0eadbecafc125b18a78eb80ab7e260a33","output_index":0,"script":"4730440220272cdcdfa211a995fe56ed7cef1d47259724811fe8d367c15db8edfa7681b0f6022045cb3fd20dd96061ecf8b2028e7b026beac21d79122c0f0ebab6113b66f143f4012102c08aefd6f13d9a9d209d0cfce0be2b780c269ae3afeaa8ed2b02358df742ae72","output_value":1000000,"sequence":4294967295,"addresses":["moy1ssWvjhA9j6qJ4Bu7nvV3zVxZevrvY9"],"script_type":"pay-to-pubkey-hash","age":1575411}],"outputs":[{"value":1000000,"script":"76a91400a14e6aa9fb5177c776209d105a0587a31fb11288ac","addresses":["mfaHXp87jU5M66mzZCJNd9hRezPMQGyU6q"],"script_type":"pay-to-pubkey-hash"}]}}
  */
 
 
 /**
  *
-//   * {"tx":{"block_height":-1,"block_index":-1,"hash":"0fa41611407b2b60bb82236a70d435c73e48e057b39297c45c6ca369c23617f0","addresses":["moy1ssWvjhA9j6qJ4Bu7nvV3zVxZevrvY9","mfaHXp87jU5M66mzZCJNd9hRezPMQGyU6q"],"total":1000000,"fees":0,"size":191,"preference":"low","relayed_by":"124.87.166.38","received":"2019-08-29T02:27:21.324214118Z","ver":2,"double_spend":false,"vin_sz":1,"vout_sz":1,"confirmations":0,"inputs":[{"prev_hash":"f4ef7c96a4b8b68b4f00197f33fca1d0eadbecafc125b18a78eb80ab7e260a33","output_index":0,"script":"4730440220272cdcdfa211a995fe56ed7cef1d47259724811fe8d367c15db8edfa7681b0f6022045cb3fd20dd96061ecf8b2028e7b026beac21d79122c0f0ebab6113b66f143f4012102c08aefd6f13d9a9d209d0cfce0be2b780c269ae3afeaa8ed2b02358df742ae72","output_value":1000000,"sequence":4294967295,"addresses":["moy1ssWvjhA9j6qJ4Bu7nvV3zVxZevrvY9"],"script_type":"pay-to-pubkey-hash","age":1575411}],"outputs":[{"value":1000000,"script":"76a91400a14e6aa9fb5177c776209d105a0587a31fb11288ac","addresses":["mfaHXp87jU5M66mzZCJNd9hRezPMQGyU6q"],"script_type":"pay-to-pubkey-hash"}]}}
+{
+    "tx": {
+        "block_height": -1,
+        "block_index": -1,
+        "hash": "0fa41611407b2b60bb82236a70d435c73e48e057b39297c45c6ca369c23617f0",
+        "addresses": [
+            "moy1ssWvjhA9j6qJ4Bu7nvV3zVxZevrvY9",
+            "mfaHXp87jU5M66mzZCJNd9hRezPMQGyU6q"
+        ],
+        "total": 1000000,
+        "fees": 0,
+        "size": 191,
+        "preference": "low",
+        "relayed_by": "124.87.166.38",
+        "received": "2019-08-29T02:27:21.324214118Z",
+        "ver": 2,
+        "double_spend": false,
+        "vin_sz": 1,
+        "vout_sz": 1,
+        "confirmations": 0,
+        "inputs": [
+            {
+                "prev_hash": "f4ef7c96a4b8b68b4f00197f33fca1d0eadbecafc125b18a78eb80ab7e260a33",
+                "output_index": 0,
+                "script": "4730440220272cdcdfa211a995fe56ed7cef1d47259724811fe8d367c15db8edfa7681b0f6022045cb3fd20dd96061ecf8b2028e7b026beac21d79122c0f0ebab6113b66f143f4012102c08aefd6f13d9a9d209d0cfce0be2b780c269ae3afeaa8ed2b02358df742ae72",
+                "output_value": 1000000,
+                "sequence": 4294967295,
+                "addresses": [
+                    "moy1ssWvjhA9j6qJ4Bu7nvV3zVxZevrvY9"
+                ],
+                "script_type": "pay-to-pubkey-hash",
+                "age": 1575411
+            }
+        ],
+        "outputs": [
+            {
+                "value": 1000000,
+                "script": "76a91400a14e6aa9fb5177c776209d105a0587a31fb11288ac",
+                "addresses": [
+                    "mfaHXp87jU5M66mzZCJNd9hRezPMQGyU6q"
+                ],
+                "script_type": "pay-to-pubkey-hash"
+            }
+        ]
+    }
+}
  *  */
