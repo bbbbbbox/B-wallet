@@ -24,19 +24,17 @@ function generate_pks() {
     console.log("钱包地址:" + address)
 }
 
-// generate_pks()
-// trans_pbst()
-
 
 const transfer1 = () => {
     // const transfer1 = async () => {
     // 创建钱包
     const alice = bitcoin.ECPair.fromWIF('cPBWtnLonM1P8MnLPNpbuzeQN28KQAxCYqKQRV7fsPFwb8EAo5HU', TESTNET);
+    console.log(alice.privateKey)
     // 构建交易 builder
     const txb = new bitcoin.TransactionBuilder(TESTNET);
 
     // 添加交易中的 Inputs，假设这个 UTXO 有 15000 satoshi
-    txb.addInput('f4ef7c96a4b8b68b4f00197f33fca1d0eadbecafc125b18a78eb80ab7e260a33', 0);
+    txb.addInput('b7f4e6261781c863a9d4e9e6cd9c2cc0c021ca8cbe41b9c9fcfe867400f833d6', 0);
     // 添加交易中的 Outputs，矿工费用 = 15000 - 12000 = 3000 satoshi
     // addOutput 方法的参数分别为收款地址和转账金额
     txb.addOutput('mfaHXp87jU5M66mzZCJNd9hRezPMQGyU6q', 1000000);
@@ -69,42 +67,6 @@ const transfer1 = () => {
 };
 
 transfer1();
-
-
-// const transfer2 = async () => {
-
-//     const bob = bitcoin.ECPair.fromWIF('cPBWtnLonM1P8MnLPNpbuzeQN28KQAxCYqKQRV7fsPFwb8EAo5HU', TESTNET);
-//     // 注意要指定交易对象是测试链的
-//     const txb = new bitcoin.TransactionBuilder(TESTNET);
-//     txb.setVersion(1);
-//     // 在这个交易中， bob在第0个位置，上图所示
-//     txb.addInput('f4ef7c96a4b8b68b4f00197f33fca1d0eadbecafc125b18a78eb80ab7e260a33', 0);
-
-//     // 这里把btc转给 alice 的地址，金额是0.02 但是要*100000000, 也就是2000000,
-//     // 剩余的金额没有设置招零地址接收，则被视为手续费，被区块网络收取
-//     // 每一笔交易只有已花费和未花费两种状态，不存在消费一部分的状态，
-//     // 所以合并多笔交易的话，只要未花费，都可以合并。
-//     txb.addOutput('mfaHXp87jU5M66mzZCJNd9hRezPMQGyU6q', 1000000);
-
-//     // 签名交易，0代表索引，输入排序，这里只有一个输入，所以是第0位。
-//     txb.sign(0, bob);
-
-//     // 序列化成一串字符
-//     const tx = txb.build().toHex();
-//     console.log(tx);
-
-//     // 在一个测试链的节点把交易广布出去
-//     const result = await fetch('https://api.blockcypher.com/v1/btc/test3/txs/push', {
-//         method: 'post',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({ tx })
-//     });
-
-//     // 打印结果
-//     console.log(result);
-// };
-
-// transfer2();
 
 
 
