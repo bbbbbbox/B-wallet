@@ -15,15 +15,12 @@ function generate_pks() {
     const pk = bs58.encode(bytes)
     const bytes_pb = Buffer.from(keyPair.publicKey, 'hex')
     const pbk = bs58.encode(bytes_pb)
-
-    const { address } = bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey, network: TESTNET })
-
+    const { address } = bitcoin.payments.p2pk({ pubkey: keyPair.publicKey, network: TESTNET })
     console.log("wif:" + keyPair.toWIF())
     console.log("私钥:" + pk)
     console.log("公钥:" + pbk)
     console.log("钱包地址:" + address)
 }
-
 
 const transfer1 = () => {
     // const transfer1 = async () => {
